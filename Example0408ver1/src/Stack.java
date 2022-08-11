@@ -1,36 +1,27 @@
-// В этом классе определяется целочисленный стек,
-// где можно хранить до length целочисленных значений
 public class Stack {
 
-    int[] array;
-    int top;
+    StackItem top;
 
-    // инициализировать массив и вершину стека
-    public Stack(int length) {
-        array = new int[length];
-        top = -1;
-    }
-
-    // добавить элемент в стек
     public void push(int item) {
-        if (top == array.length - 1) {
-            System.out.println("Stack is full");
-        } else {
-            top++;
-            array[top] = item;
-        }
+        StackItem temp = new StackItem();
+        temp.value = item;
+        temp.next = top;
+        top = temp;
     }
 
-    // извлечь элемент из стека
     public int pop() {
-        if (top < 0) {
-            System.out.println("Stack is empty");
-            return 0;
-        } else {
-            int value = array[top];
-            top--;
-            return value;
-        }
+        int a = top.value;
+        top = top.next;
+        return a;
     }
 
+    // Проверка пуст ли стек
+    public boolean isEmpty() {
+        return (top == null);
+    }
+
+    private class StackItem {
+        int value;
+        StackItem next;
+    }
 }
