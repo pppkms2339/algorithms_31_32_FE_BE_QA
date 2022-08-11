@@ -1,15 +1,20 @@
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(10);
-        System.out.println(fact(3));
-    }
+        Stack st1 = new Stack();
+        st1.push(10);
+        st1.push(100);
+        System.out.println(st1.pop());
+        System.out.println(st1.pop());
+        System.out.println(st1.pop());
 
-    private static int fact(int n) {
-        if (n == 1) {
-            return 1;
+        for (int i = 0; i < 10; i++) {
+            st1.push(i);
         }
-        return fact(n - 1) * n;
+        for (int i = 0; i < 10; i++) {
+            System.out.println(st1.pop());
+        }
+
     }
 
 }
