@@ -1,18 +1,18 @@
-// В этом классе определяется целочисленный стек,
-// где можно хранить до length целочисленных значений
-public class Stack {
+// В этом классе определяется строковый стек,
+// где можно хранить до length строковых значений
+public class StackString {
 
-    int[] array;
+    String[] array;
     int top;
 
     // инициализировать массив и вершину стека
-    public Stack(int length) {
-        array = new int[length];
+    public StackString(int length) {
+        array = new String[length];
         top = -1;
     }
 
     // добавить элемент в стек
-    public void push(int item) {
+    public void push(String item) {
         if (top == array.length - 1) {
             System.out.println("Stack is full");
         } else {
@@ -22,12 +22,12 @@ public class Stack {
     }
 
     // извлечь элемент из стека
-    public int pop() {
+    public String pop() {
         if (top < 0) {
             System.out.println("Stack is empty");
-            return 0;
+            return "";
         } else {
-            int value = array[top];
+            String value = array[top];
             top--;
             return value;
         }

@@ -14,6 +14,10 @@ public class Main {
         for (int i = 0; i < 10; i++) {
             System.out.println(st1.pop());
         }
+
+        StackString st2 = new StackString(10);
+        st2.push("qwerty");
+        System.out.println(st2.pop());
     }
 
 }
