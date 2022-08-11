@@ -1,7 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
-        Stack st1 = new Stack();
+        Stack st1 = new Stack(10);
         st1.push(10);
         st1.push(100);
         System.out.println(st1.pop());
@@ -14,7 +14,6 @@ public class Main {
         for (int i = 0; i < 10; i++) {
             System.out.println(st1.pop());
         }
-
     }
 
 }

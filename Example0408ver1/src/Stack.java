@@ -6,14 +6,14 @@ public class Stack {
     int top;
 
     // инициализировать массив и вершину стека
-    public Stack() {
-        array = new int[10];
+    public Stack(int length) {
+        array = new int[length];
         top = -1;
     }
 
     // добавить элемент в стек
     public void push(int item) {
-        if (top == 9) {
+        if (top == array.length - 1) {
             System.out.println("Stack is full");
         } else {
             top++;
