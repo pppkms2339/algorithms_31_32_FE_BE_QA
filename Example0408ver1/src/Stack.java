@@ -2,17 +2,21 @@ public class Stack {
 
     private StackItem top;
 
-    public void push(char item) {
+    public void push(int item) {
         StackItem temp = new StackItem();
         temp.value = item;
         temp.next = top;
         top = temp;
     }
 
-    public char pop() {
-        char a = top.value;
+    public int pop() {
+        int a = top.value;
         top = top.next;
         return a;
+    }
+
+    public int top() {
+        return top.value;
     }
 
     // Проверка пуст ли стек
@@ -21,7 +25,7 @@ public class Stack {
     }
 
     private class StackItem {
-        char value;
+        int value;
         StackItem next;
     }
 }

@@ -2,50 +2,27 @@ public class Main {
 
     public static void main(String[] args) {
         Stack st1 = new Stack();
-        char[] brackets = {'(', ')', '[', ']', '{', '}'};
-        String str = "(([{]}))";
-        for (int i = 0; i < str.length(); i++) {
-            char c = str.charAt(i);
-            if (isOpenBracket(c, brackets)) {
-                st1.push(c);
+        String[] str = {"1","C"};
+        for (int i = 0; i < str.length; i++) {
+            if (str[i] == "C") {
+                st1.pop();
+            } else if (str[i] == "D") {
+                st1.push(2 * st1.top());
+            } else if (str[i] == "+") {
+                int a = st1.pop();
+                int b = st1.top();
+                st1.push(a);
+                st1.push(a + b);
             } else {
-                if (st1.isEmpty()) {
-                    System.out.println("Wrong bracket string");
-                    return;
-                }
-                char b = st1.pop();
-                // Совпадение типов скобок b и c
-                if (!isBracketsMatch(b, c, brackets)) {
-                    System.out.println("Wrong bracket string");
-                    return;
-                }
+                st1.push(Integer.parseInt(str[i]));
             }
-        }
-        if (st1.isEmpty()) {
-            System.out.println("Correct bracket string");
-        } else {
-            System.out.println("Wrong bracket string");
-        }
-    }
 
-    private static boolean isOpenBracket(char c, char[] brackets) {
-        for (int i = 0; i < brackets.length; i += 2) {
-            if (brackets[i] == c) {
-                return true;
-            }
         }
-        return false;
-    }
-
-    // b - открывающаяся скобка
-    // c - закрывающаяся скобка
-    private static boolean isBracketsMatch(char b, char c, char[] brackets) {
-        for (int i = 0; i < brackets.length; i += 2) {
-            if (brackets[i] == b && brackets[i + 1] == c) {
-                return true;
-            }
+        int sum = 0;
+        while (!st1.isEmpty()) {
+            sum += st1.pop();
         }
-        return false;
+        System.out.println(sum);
     }
 
 }
