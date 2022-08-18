@@ -3,7 +3,7 @@ public class Queue {
     private QueueItem head;
     private QueueItem tail;
 
-    public void add(int item) {
+    public void add(double item) {
         QueueItem temp = new QueueItem();
         temp.value = item;
         if (isEmpty()) {
@@ -16,8 +16,8 @@ public class Queue {
         tail = temp;
     }
 
-    public int delete() {
-        int a = head.value;
+    public double delete() {
+        double a = head.value;
         head = head.next;
         if (head == null) {
             tail = null;
@@ -30,7 +30,7 @@ public class Queue {
     }
 
     private class QueueItem {
-        public int value;
+        public double value;
         public QueueItem next;
     }
 
