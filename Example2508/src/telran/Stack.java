@@ -1,3 +1,5 @@
+package telran;
+
 public class Stack {
 
     private StackItem top;
