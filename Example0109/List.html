@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Tel-Ran</title>
+</head>
+<body>
+	<script>
+		class Node {
+			value;
+			next;
+		}
+		class List {
+			#head = null;
+			#tail = null;
+			
+			add(item) {
+				let temp = new Node();
+				temp.value = item;
+				if (this.head == null) {
+					this.head = temp;
+				} else {
+					this.tail.next = temp;
+				}
+				this.tail = temp;
+			}
+			
+			printList() {
+				let temp = this.head;
+				while (temp != null) {
+					document.write(temp.value + '<br>');
+					temp = temp.next;
+				}
+			}
+		}
+		// Тестирование списка
+		let list = new List();
+		list.add(10);
+        list.add(20);
+        list.add(30);
+		list.printList();
+	</script>
+</body>
+</html>
