@@ -1,25 +1,18 @@
 public class Main {
 
     public static void main(String[] args) {
-        Deque deque = new Deque();
-        deque.addFirst(10);
-        deque.addLast(20);
-        deque.addLast(30);
-        Deque resultDeque = palindrom(deque);
-        // Вывод результата на экран
-        while (!resultDeque.isEmpty()) {
-            System.out.println(resultDeque.deleteFirst());
-        }
+        // Дан односвязный список (ссылка на начало списка, head).
+        // Написать метод, который возвращает true, если список -
+        // палиндром и false в обратном случае
+        // 1 -> 2 -> 2 -> 1 вернет true
+        // 1 -> 2 вернет false
+        List list = new List();
+        list.add(10);
+        list.add(20);
+        list.add(30);
+        list.add(20);
+        list.add(10);
+        list.printList();
+        System.out.println(list.isPalindrom());
     }
-
-    private static Deque palindrom(Deque deque) {
-        Deque resultDeque = new Deque();
-        while (!deque.isEmpty()) {
-            int temp = deque.deleteLast();
-            resultDeque.addFirst(temp);
-            resultDeque.addLast(temp);
-        }
-        return resultDeque;
-    }
-
 }
